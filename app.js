@@ -347,6 +347,7 @@ const WORD_INFO = {
   METRO: { display: "METRO", uk: "метро", emoji: "🚇" },
   MONO: { display: "MONO", uk: "мавпа", emoji: "🐵" },
   MONTANA: { display: "MONTAÑA", uk: "гора", emoji: "⛰️" },
+  MONTAÑA: { display: "MONTAÑA", uk: "гора", emoji: "⛰️" },
   MORADO: { display: "MORADO", uk: "фіолетовий", emoji: "🟣" },
   MOTO: { display: "MOTO", uk: "мотоцикл", emoji: "🏍️" },
   MOTOCICLETA: { display: "MOTOCICLETA", uk: "мотоцикл", emoji: "🏍️" },
@@ -376,6 +377,7 @@ const WORD_INFO = {
   ORGULLOSO: { display: "ORGULLOSO", uk: "гордий", emoji: "" },
   OSO: { display: "OSO", uk: "ведмідь", emoji: "🐻" },
   OTONO: { display: "OTOÑO", uk: "осінь", emoji: "🍂" },
+  OTOÑO: { display: "OTOÑO", uk: "осінь", emoji: "🍂" },
   OVEJA: { display: "OVEJA", uk: "вівця", emoji: "🐑" },
   PACIENTE: { display: "PACIENTE", uk: "пацієнт / терплячий", emoji: "" },
   PAISAJE: { display: "PAISAJE", uk: "пейзаж", emoji: "🏞️" },
@@ -405,6 +407,7 @@ const WORD_INFO = {
   PINGUINO: { display: "PINGÜINO", uk: "пінгвін", emoji: "🐧" },
   PINTURA: { display: "PINTURA", uk: "малювання", emoji: "🎨" },
   PINA: { display: "PIÑA", uk: "ананас", emoji: "🍍" },
+  PIÑA: { display: "PIÑA", uk: "ананас", emoji: "🍍" },
   PIZZA: { display: "PIZZA", uk: "піца", emoji: "🍕" },
   PLANTA: { display: "PLANTA", uk: "рослина", emoji: "🌱" },
   PLATANO: { display: "PLÁTANO", uk: "банан", emoji: "🍌" },
@@ -558,7 +561,13 @@ let state = {
 };
 
 function normalizeWord(word) {
-  return word.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
+  return word
+    .replace(/ñ/g, "Ñ")
+    .replace(/Ñ/g, "__ENYE__")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/__ENYE__/g, "Ñ")
+    .toUpperCase();
 }
 
 function randomItem(items) {
