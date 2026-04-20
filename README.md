@@ -43,7 +43,7 @@ To save a printable version, use the `Imprimir` button and choose “Save as PDF
 ## Publish On GitHub Pages
 
 1. Create a new GitHub repository.
-2. Upload `index.html`, `styles.css`, `app.js`, `README.md`, `favicon.svg`, and `preview.svg`.
+2. Upload `index.html`, `styles.css`, `app.js`, `README.md`, `favicon.svg`, `preview.svg`, and `preview.png`.
 3. Open `Settings` -> `Pages`.
 4. Choose `Deploy from a branch`.
 5. Select the `main` branch and `/root` folder.
