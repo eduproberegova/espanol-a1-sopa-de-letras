@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ESPAÑOL A1">
+  <rect width="64" height="64" rx="12" fill="#f8fbfe"/>
+  <path d="M0 0h64v64H0z" fill="url(#bg)"/>
+  <rect x="10" y="10" width="44" height="44" rx="8" fill="#ffffff" stroke="#d8e7f5" stroke-width="2"/>
+  <path d="M15 21h34" stroke="#ef4368" stroke-width="4" stroke-linecap="round"/>
+  <text x="32" y="40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800" fill="#111827">A1</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64">
+      <stop stop-color="#fae6ef"/>
+      <stop offset="0.55" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dcecf8"/>
+    </linearGradient>
+  </defs>
+</svg>

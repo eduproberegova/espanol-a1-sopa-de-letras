@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ESPAÑOL A1 | Sopa de Letras</title>
+    <meta name="description" content="Sopa de letras interactiva para practicar vocabulario de español A1 por temas.">
+    <meta property="og:title" content="ESPAÑOL A1 | Sopa de Letras">
+    <meta property="og:description" content="Juego interactivo de vocabulario A1 con temas, niveles, traducciones y modo imprimir/PDF.">
+    <meta property="og:image" content="preview.svg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ESPAÑOL A1 | Sopa de Letras">
+    <meta name="twitter:description" content="Juego interactivo de vocabulario A1 con temas, niveles, traducciones y modo imprimir/PDF.">
+    <meta name="twitter:image" content="preview.svg">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero__copy">
+          <h1 id="page-title">ESPAÑOL A1</h1>
+          <p class="byline">designed by @eduproberegova</p>
+          <p class="intro">
+            <span>Elige un tema y un nivel.</span>
+            <span>Busca las palabras en la cuadrícula y marca cada respuesta.</span>
+          </p>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="tile tile--tomato">T</div>
+          <div class="tile tile--bus">B</div>
+          <div class="tile tile--leaf">V</div>
+          <div class="tile tile--train">R</div>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Generador de sopa de letras">
+        <aside class="panel controls" aria-label="Opciones">
+          <div class="field">
+            <label for="topic">Tema</label>
+            <select id="topic"></select>
+          </div>
+
+          <div class="field">
+            <label>Nivel</label>
+            <div class="segmented" role="radiogroup" aria-label="Nivel de dificultad">
+              <button class="segment is-active" type="button" data-level="easy" aria-pressed="true">Fácil</button>
+              <button class="segment" type="button" data-level="medium" aria-pressed="false">Medio</button>
+              <button class="segment" type="button" data-level="hard" aria-pressed="false">Difícil</button>
+            </div>
+          </div>
+
+          <div class="stats" aria-live="polite">
+            <div>
+              <span id="found-count">0</span>
+              <small>encontradas</small>
+            </div>
+            <div>
+              <span id="total-count">0</span>
+              <small>palabras</small>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="button button--primary" id="new-game" type="button">Nueva sopa</button>
+            <button class="button" id="show-answer" type="button">Revelar</button>
+            <button class="button" id="print-game" type="button">Imprimir</button>
+          </div>
+        </aside>
+
+        <section class="board-area">
+          <div class="board-topline">
+            <div>
+              <p class="eyebrow" id="topic-label">Verduras</p>
+              <h2 id="level-label">Nivel fácil</h2>
+            </div>
+            <p id="status">Arrastra sobre una palabra para marcarla.</p>
+          </div>
+
+          <div class="board-scroll" aria-label="Área desplazable de la cuadrícula">
+            <div id="board" class="board" aria-label="Cuadrícula de letras"></div>
+          </div>
+        </section>
+
+        <aside class="panel word-panel" aria-label="Palabras encontradas">
+          <h2>Encontradas</h2>
+          <p class="word-panel__hint" id="word-hint">Las palabras aparecerán aquí.</p>
+          <ul id="word-list" class="word-list"></ul>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
